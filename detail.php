@@ -10,11 +10,14 @@
     $postCom->execute();
     $comment = $conn->prepare("SELECT * FROM Comment WHERE Post_id = $id ORDER BY DateTime;");
     $comment->execute();
+		$tag = $conn->prepare("SELECT tagtype FROM tag WHERE postid = $id;");
+		$tag->execute();
     $posts = $postCom->fetchAll();
     $comments = $comment->fetchAll();
     $result = $sth->fetchAll();
+		$tag = $tag->fetchAll();
     $myDateTime = new DateTime($result[0]['DateTime'], new DateTimeZone('GMT'));
-	$myDateTime->setTimezone(new DateTimeZone('Asia/Hong_Kong')); 
+	$myDateTime->setTimezone(new DateTimeZone('Asia/Hong_Kong'));
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -48,7 +51,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -64,7 +67,7 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/index.css">
-	
+
     <script src="js/index.js"></script>
 
 	<!-- Modernizr JS -->
@@ -93,7 +96,7 @@
 						<a href="games.php" data-nav-section="menu">Game</a>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -103,11 +106,16 @@
 			<div class="title">
 				<h2><?=$result[0]['Title']?></h2>
 				<span class="byline"><?=$myDateTime->format('Y-m-d H:i');?></span> <i class="am-icon-thumbs-up" id="postLike" onclick="like(<?=$_GET['id']?>,'Post')">  <?=$result["0"]["likeNo"]?></i></p></div>
+				<p><?php
+				echo "Tags : " ;
+				foreach($tag as $keys => $topic){
+						echo $topic[0] . "    ";
+				}?></p>
 			<p><img src="data:image/png;base64,<?=base64_encode( $result[0]['Image'] )?>" alt="" class="image image-full" /> </p>
 			<p><?=$result[0]['Content']?></p>
 			<p style="color:black;border-bottom:1px solid rgba(34,36,38,.15);">Comment</p>
 			<article class="am-comment">
-  
+
 <?php
 	foreach ($comments as $comment) {
 			$myDateTime = new DateTime($comment["DateTime"], new DateTimeZone('GMT'));
@@ -137,7 +145,7 @@
   <?php
 	}
   ?>
-  
+
   <form class="am-form" action="addComment.php" method="post">
   	<p></p>
   	<textarea style="margin-left: 63px; width:635px" rows="5" id="doc-ta-1" name="comment"></textarea>
@@ -224,10 +232,10 @@
 	</div>
 
 
-	
-	
-	
-	
+
+
+
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -265,10 +273,10 @@ function like(id,type){
 	var url = "addLike.php";
 	var params = "id="+id+"&type="+type;
 	http.open("POST", url, true);
-	
+
 	//Send the proper header information along with the request
 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	
+
 	http.onreadystatechange = function() {//Call a function when the state changes.
 	    if(http.readyState == 4 && http.status == 200) {
 	    	var myArr = JSON.parse(this.responseText);
@@ -276,7 +284,7 @@ function like(id,type){
 	    	var likeNo = myArr["likeNo"];
 	    	var ip = myArr["ip"];
 	    	var type = myArr["type"];
-	    	
+
 	    	if(type == "Comment"){
 	    		document.getElementById('Comment'+id).innerHTML = myArr["likeNo"];
 	    	}else{
@@ -294,10 +302,10 @@ function saveReplay(id,reply){
 	var url = "saveReplay.php";
 	var params = "id="+id+"&reply="+reply;
 	http.open("POST", url, true);
-	
+
 	//Send the proper header information along with the request
 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	
+
 	http.onreadystatechange = function() {//Call a function when the state changes.
 	    if(http.readyState == 4 && http.status == 200) {
 	    	location.href = "detail.php?id=<?=$id?>";
