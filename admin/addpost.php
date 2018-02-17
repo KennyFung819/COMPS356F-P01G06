@@ -62,7 +62,7 @@
 .form-style-3 input[type=time],
 .form-style-3 input[type=url],
 .form-style-3 input[type=email],
-.form-style-3 select, 
+.form-style-3 select,
 .form-style-3 textarea{
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -92,7 +92,7 @@
     border-radius: 3px;
     border-radius: 3px;
     -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;    
+    -moz-border-radius: 3px;
     font-weight: bold;
     float:right;
 }
@@ -124,19 +124,23 @@
                         <label for="Title"><span>Title <span class="required">*</span></span><textarea name="Title" class="textarea-field "></textarea></label>
 						<label for="Content"><span>Content <span class="required">*</span></span><textarea  name="Content" class="textarea-field aaa" style="height=250px"></textarea></label>
 						<label for="Introduction"><span>Introduction <span class="required">*</span></span><textarea name="Introduction" class="textarea-field"></textarea></label>
-                   		   </fieldset> 
-                   		  
-					
+						<label for="type"><span>type <span class="required">*</span></span><textarea name="type" class="textarea-field"></textarea></label>
+						<label for="Tag"><span>Tag <span class="required">*</span></span><textarea name="Tag" class="textarea-field"></textarea></label>
+						Enter Multiple Tags by seperating them with blankspace.
+
+                   		   </fieldset>
+
+
 			                     <label for="Image"><span>Image <span class="required">*</span></span><img  src="data:image/png;base64" class="img-responsive" width="524" height="350">
 										    </figure><input type="file" onchange="change()" name="Image" /> </label>
 										    </fieldset><input type="submit" class="am-btn am-btn-secondary" value="Insert"/> <input type="Reset" class="am-btn am-btn-secondary" value="Reset"/>
 			                      </div>
-			                      
+
 			                      </form>
         </div>
- 
+
  </div>
- 
+
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -150,7 +154,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-    
+
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -181,7 +185,7 @@
       $('nav').attr('class', 'navbar navbar-expand-lg  bg-light fixed-top navbar-light');
       $('body').attr('class', 'fixed-nav sticky-footer bg-light');
     }
-    
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -200,11 +204,11 @@ function getCookie(cname) {
 	   	  var preview = document.querySelector('img');
 			  var file    = document.querySelector('input[type=file]').files[0];
 			  var reader  = new FileReader();
-			
+
 			  reader.onloadend = function () {
 			    preview.src = reader.result;
 			  }
-			
+
 			  if (file) {
 			    reader.readAsDataURL(file);
 			  } else {
