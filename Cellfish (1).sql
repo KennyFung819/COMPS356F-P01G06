@@ -22,6 +22,18 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+--  NEW
+-- Table structure for table `tag`
+--
+
+create table tag(
+	postID int(11),
+    tagType varchar(30),
+    primary key(postID,tagType),
+    foreign key (postID) REFERENCES post(id)
+)
+
+
 --
 -- Table structure for table `Comment`
 --
