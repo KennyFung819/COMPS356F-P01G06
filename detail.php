@@ -4,8 +4,10 @@
 		header("Location: index.html");
 	}
 	$id = $_GET["id"];
-	$sth = $conn->prepare("SELECT Title,Content,Image,DateTime,likeNo FROM Post where Id=$id ORDER BY likeNo desc");
+	$sth = $conn->prepare("SELECT Title,Content,Image,DateTime,likeNo,viewCount FROM Post where Id=$id ORDER BY likeNo desc");
     $sth->execute();
+	$addView = $conn->prepare("Update Post set viewCount = viewCount+1 where Id=$id");
+	$addView->execute();
     $postCom = $conn->prepare("SELECT Id,Title,Introduction FROM Post ORDER BY RAND()");
     $postCom->execute();
     $comment = $conn->prepare("SELECT * FROM Comment WHERE Post_id = $id ORDER BY DateTime;");
@@ -48,7 +50,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -102,7 +104,11 @@
 		<div id="content">
 			<div class="title">
 				<h2><?=$result[0]['Title']?></h2>
-				<span class="byline"><?=$myDateTime->format('Y-m-d H:i');?></span> <i class="am-icon-thumbs-up" id="postLike" onclick="like(<?=$_GET['id']?>,'Post')">  <?=$result["0"]["likeNo"]?></i></p></div>
+				<span class="byline"><?=$myDateTime->format('Y-m-d H:i');?></span> 
+				<i class="am-icon-thumbs-up" id="postLike" onclick="like(<?=$_GET['id']?>,'Post')"> 
+				<?=$result["0"]["likeNo"]?></i>
+				<i class="fa fa-eye" id="viewCount"> <?=$result[0]['viewCount']?></i>
+				</p></div>
 			<p><img src="data:image/png;base64,<?=base64_encode( $result[0]['Image'] )?>" alt="" class="image image-full" /> </p>
 			<p><?=$result[0]['Content']?></p>
 			<p style="color:black;border-bottom:1px solid rgba(34,36,38,.15);">Comment</p>

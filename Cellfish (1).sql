@@ -116,6 +116,7 @@ CREATE TABLE IF NOT EXISTS `Post` (
   `likeNo` int(20) NOT NULL,
   `DateTime` datetime NOT NULL,
   `type` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `viewCount` int(10) default 0,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12122 ;
 
