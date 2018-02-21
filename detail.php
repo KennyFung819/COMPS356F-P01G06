@@ -31,6 +31,7 @@
 	<meta name="author" content="FREEHTML5.CO" />
 
   	<!-- Facebook and Twitter integration -->
+	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
