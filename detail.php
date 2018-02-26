@@ -109,7 +109,8 @@
 				<p><?php
 				echo "Tags : " ;
 				foreach($tag as $keys => $topic){
-						echo $topic[0] . "    ";
+						echo "<span style=\"  	background-size: cover;
+						  	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk606roJP6CL6xumG2XHPuldOvcVZmWv2gMwJJDkvsbOoRMIhJMg);\">" . $topic[0]." </span>";//<a href=\"\"></a>
 				}?></p>
 			<p><img src="data:image/png;base64,<?=base64_encode( $result[0]['Image'] )?>" alt="" class="image image-full" /> </p>
 			<p><?=$result[0]['Content']?></p>
