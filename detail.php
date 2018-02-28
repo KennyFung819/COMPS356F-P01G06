@@ -107,10 +107,9 @@
 				<h2><?=$result[0]['Title']?></h2>
 				<span class="byline"><?=$myDateTime->format('Y-m-d H:i');?></span> <i class="am-icon-thumbs-up" id="postLike" onclick="like(<?=$_GET['id']?>,'Post')">  <?=$result["0"]["likeNo"]?></i></p></div>
 				<p><?php
-				echo "Tags : " ;
 				foreach($tag as $keys => $topic){
 						echo "<span style=\"  	background-size: cover;
-						  	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk606roJP6CL6xumG2XHPuldOvcVZmWv2gMwJJDkvsbOoRMIhJMg);\">" . $topic[0]." </span>";//<a href=\"\"></a>
+						  	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk606roJP6CL6xumG2XHPuldOvcVZmWv2gMwJJDkvsbOoRMIhJMg);\"><a href=\"\">#" . $topic[0]."</a> </span>";//
 				}?></p>
 			<p><img src="data:image/png;base64,<?=base64_encode( $result[0]['Image'] )?>" alt="" class="image image-full" /> </p>
 			<p><?=$result[0]['Content']?></p>

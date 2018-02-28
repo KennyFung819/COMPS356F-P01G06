@@ -22,29 +22,27 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---  NEW
--- Table structure for table `tag`
---
 
-create table tag(
-	postID int(11),
-    tagType varchar(30),
-    primary key(postID,tagType),
-    foreign key (postID) REFERENCES post(id)
-)
+
+
 
 
 --
 -- Table structure for table `Comment`
 --
-
+  create table tag(
+	postID int(11),
+    tagType varchar(30),
+    primary key(postID,tagType),
+    foreign key (postID) REFERENCES post(id)
+)
 CREATE TABLE IF NOT EXISTS `Comment` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Content` text COLLATE utf8_unicode_ci NOT NULL,
   `Post_id` int(11) NOT NULL,
   `DateTime` datetime NOT NULL,
-  `likeNo` int(20) NOT NULL DEFAULT '0',
+  `likeNo` int(20) NOT NULL DEFAULT 0,
   PRIMARY KEY (`Id`),
   KEY `Post_id_2` (`Post_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
@@ -217,6 +215,7 @@ ALTER TABLE `Comment`
 --
 ALTER TABLE `SubComment`
   ADD CONSTRAINT `SubComment_ibfk_1` FOREIGN KEY (`comment_Id`) REFERENCES `Comment` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
