@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once "../common/head.html"?>
+<?php require_once "asset/header.html"?>
 <body class="bg-light">
-<?php require_once "../common/navbar.php" ?>
 <section class="text-white" id="introduction">
     <div class="container">
         <div class="row">
@@ -16,7 +15,7 @@
         </div>
     </div>
     <div class="container">
-        <form class="navbar-form navbar-search my-lg-0" action="searching.php">
+        <form class="navbar-form navbar-search my-lg-0" action="search.php">
             <div class="input-group">
                 <div class="input-group-btn">
                     <select class="btn btn-primary" name="keywordsType">
@@ -63,7 +62,7 @@
     </div>
 </section>
 
-<?php require_once "../common/javascript.html"?>
+<?php require_once "asset/footer.html"?>
 
 </body>
 </html>
