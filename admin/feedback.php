@@ -5,7 +5,7 @@
      unset($_SESSION['admin']);
     }
 	if(!$_SESSION['admin']){
-		header('Location: index.html');
+		header('Location: index.php');
 	}
 	$sth = $conn->prepare("SELECT Id,Name, Email,Subject,Message FROM Contact");
 	$sth->execute();

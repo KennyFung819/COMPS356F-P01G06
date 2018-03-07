@@ -1,7 +1,7 @@
 <?php
 	require_once('database.php');
 	if (!isset($_GET['id'])){
-		header("Location: index.html");
+		header("Location: index.php");
 	}
 	$id = $_GET["id"];
 	$sth = $conn->prepare("SELECT Title,Content,Image,DateTime,likeNo,viewCount FROM Post where Id=$id ORDER BY likeNo desc");
@@ -88,7 +88,7 @@
 						<a href="about.php">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="index.html">Cellfish</a>
+						<a href="index.php">Cellfish</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="news.php" data-nav-section="features">News</a>
