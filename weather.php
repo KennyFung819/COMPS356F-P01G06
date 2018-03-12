@@ -7,10 +7,12 @@
  $data = json_decode($json,true);
  //show data
  echo "Region : " . $data["name"] . "</BR>";
+ echo "<img src=images/icon_temperature.png alt=\"Temperature icon\"/>";
  echo "Temperature : " . $data["main"]["temp"] . "°C</BR>";
- echo "Weather : ". $data["weather"][0]["description"] ."</BR>";
+ echo "<img src=images/icon_water.png alt=\"Water droplet icon\"/>";
  echo "Humidity : " . $data["main"]["humidity"] . "%</BR>";
-
+ echo "Weather description : ". $data["weather"][0]["description"] ."</BR>";
+ 
 /* -----------example array---------
 array(12) {
   ["coord"]=> array(2) {
