@@ -5,51 +5,34 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<?php require_once "asset/header.html"?>
 	<body>
-	<div id="fh5co-container">
-		<div class="js-sticky">
-			<div class="fh5co-main-nav">
-				<div class="container-fluid">
-					<div class="fh5co-menu-1">
-						<a href="index.html" data-nav-section="home">Home</a>
-						<a href="about.php" data-nav-section="about">About</a>
-					</div>
-					<div class="fh5co-logo">
-						<a href="index.html">Cellfish</a>
-					</div>
-					<div class="fh5co-menu-2">
-						<a href="news.php" data-nav-section="menu">News</a>
-						<a href="games.php" data-nav-section="menu">Game</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<div id="fh5co-home" class="js-fullheight" data-section="home">
 
-			<div class="flexslider">
-				
-				<div class="fh5co-overlay"></div>
-				<div class="fh5co-text">
-					<div class="container">
-						<div class="row">
-							<h1 class="to-animate">Cellfish</h1>
-							<br>
-							<h2 class="to-animate">(n)an individual who continues talking on their phone so as to be rude or inconsiderate of other people</h2>
-						</div>
-					</div>
-				</div>
-			  	<ul class="slides">
-			   	<li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-			  	</ul>
+    <?php require_once "asset/navbar.html"?>
 
-			</div>
-			
-		</div>
-		
+    <div id="fh5co-home" class="js-fullheight" data-section="home">
 
-		<div id="fh5co-sayings">
+        <div class="flexslider">
+
+            <div class="fh5co-overlay"></div>
+            <div class="fh5co-text">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="to-animate">Cellfish</h1>
+                        <br>
+                        <h2 class="to-animate">(n)an individual who continues talking on their phone so as to be rude or inconsiderate of other people</h2>
+                    </div>
+                </div>
+            </div>
+            <ul class="slides">
+                <li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+                <li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+                <li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div id="fh5co-sayings">
 			<div class="container">
 				<div class="row to-animate">
 
