@@ -84,6 +84,7 @@ body {
   animation-fill-mode: forwards;
   transform: rotateY(40deg) rotateX(33deg) translateZ(0);
 }
+
 .layer:after {
   font: 75px/0.65 'Pacifico', 'Kaushan Script', Futura, 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
   content: 'Welcome!';
@@ -92,8 +93,8 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: -80px;
-  left: -200px;
+  top: 0px;
+  left:-150px;
   color: darken(#fff, 4%);
   letter-spacing: -1px;
   text-shadow: 4px 0 10px hsla(0, 0%, 0%, .13);
@@ -160,14 +161,12 @@ $NUM_LAYERS: 20;
   <div class="layer"></div>
  
 </div>
-							<br><br><br><br>
+							<br><br><br>
 							<form action="check.php" method="get">
-							<h3 class="to-animate">Login ID :&nbsp;&nbsp;<input type="text" name="id"><br><br><br>
-							Password : <input type="password" name="password" ></h3>
-							<br><br>
+							<h3 class="to-animate">Login ID :  <input type="text" name="id"><br><br><br>
+							Password : <input type="password" name="password"></h3>
 							<br>
 							<input type="submit" value="ENTER" class="btn btn-primary btn-outline"></input>
-							
 						    </form>
 						
 					</div>
