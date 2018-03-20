@@ -1,4 +1,8 @@
 <?php
+//get City
+//$cityID = file_get_contents("city.list.json");
+//$city = json_decode($cityID,true);
+//var_dump($cityID);
 
  $url="http://api.openweathermap.org/data/2.5/weather?id=1819730&APPID=ebb802f07cc687a9c8a75898002c8a37";
  //get JSON
@@ -12,7 +16,7 @@
  echo "<img src=images/icon_water.png alt=\"Water droplet icon\"/>";
  echo "Humidity : " . $data["main"]["humidity"] . "%</BR>";
  echo "Weather description : ". $data["weather"][0]["description"] ."</BR>";
- 
+
 /* -----------example array---------
 array(12) {
   ["coord"]=> array(2) {
