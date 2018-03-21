@@ -62,27 +62,74 @@ function calculate_grade($score, $gradings, $default_str) {
 }
 
 $questions = [
-    ["content of q1 aaaaa aaaaaa aaaaaa aaaaa aaaaa aaa aaaa aaaaa aaaa aaa aaa aaaaa aaaaaa aaaaa aaa aaa aaaa aaa", [
-        ["option1 (1)", 1],
-        ["option2 (2)", 2],
-        ["option3 (3)", 3],
+    ["content of q1", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
     ]],
     ["content of q2", [
-        ["option1 (4)", 4],
-        ["option2 (5)", 5],
-        ["option3 (6)", 6],
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
     ]],
     ["content of q3", [
-        ["option1 (7)", 7],
-        ["option2 (8)", 8],
-        ["option3 (9)", 9],
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
     ]],
+	["content of q4", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
+    ]],
+	["content of q5", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
+    ]],
+	["content of q6", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
+    ]],
+	["content of q7", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
+    ]],
+	["content of q8", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
+    ]],
+	["content of q9", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
+    ]],
+	["content of q10", [
+        ["option1 ", 0],
+        ["option2 ", 5],
+        ["option3 ", 10],
+		["option4 ", 20],
+    ]]
 
 ];
 
 $gradings = [
-	[0, 10, "grade A"],
-	[11, 30, "You are not cellfish"]
+	[0, 49, "You are not cellfish."],
+	[50, 100, "You are quite cellfish sometimes."],
+	[101, 150, "You are quite annoying when you are being cellfish."],
+	[151, 200, "Come on! You shouldn't go outside again!"]
 ];
 
 
@@ -95,10 +142,12 @@ $gradings = [
 <html>
 	<head>
 		<title>The cellfish quiz</title>
+		
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/index.css">
 		<style>
+		
 h1 {
 	font-family: "Playfair Display", serif;
 	font-weight: 700;
@@ -136,6 +185,7 @@ h1 {
 	margin: 0 auto;
 	margin-top: 90px;
 	margin-bottom: 90px;
+
 }
 		</style>
 	</head>
@@ -164,7 +214,7 @@ h1 {
 			?>
 			<h1>Cellfish Quiz Result</h1>
 			<p><?php echo calculate_grade($score, $gradings, "ERROR NOT FOUND"); ?></p>
-			<form>
+			<form class="quiz-form">
 				<input type="submit" value="back" class="btn btn-primary btn-outline">
 			</form>
 			<?php
