@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	require_once('../database.php');
 	session_start();
 	if(!$_SESSION['admin']){
@@ -143,7 +143,7 @@
 					
 								    
 			                     
-			                     <label for="Image"><span>Image <span class="required">*</span></span><img  src="data:image/png;base64,<?=base64_encode($result[0]["Image"])?>" class="img-responsive" width="524" height="350">
+			                     <label for="Image"><span>Image <span class="required">*</span></span><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8//5bPQAJPgNlqF1CuQAAAABJRU5ErkJggg=="<?=base64_encode($result[0]["Image"])?>" class="img-responsive" width="320" height="240"><br><br>
 										    </figure><input type="file" onchange="change()" name="Image" /> </label>
 										    </fieldset><input type="submit" class="am-btn am-btn-secondary" value="Edit"/> <input type="Reset" class="am-btn am-btn-secondary" value="Reset"/>
 			                      </div>
