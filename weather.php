@@ -1,10 +1,26 @@
 <?php
-//get City
+//get City 1668284=taiwan  , 1819730 = HK for example
 //$cityID = file_get_contents("city.list.json");
 //$city = json_decode($cityID,true);
 //var_dump($cityID);
 
- $url="http://api.openweathermap.org/data/2.5/weather?id=1819730&APPID=ebb802f07cc687a9c8a75898002c8a37";
+ $ipaddress = $_SERVER["REMOTE_ADDR"]; //Default Taiwan
+
+ function ip_details($ip) {
+    $json = file_get_contents("http://ipinfo.io/{$ip}/geo");
+    $details = json_decode($json);
+    if(strcmp($details->city,"Hong Kong")===0){
+      $id = "1819730"; // HK
+    }else{
+      $id = "1668284"; //Taiwan
+    }
+    return $id;
+ }
+
+ //get city id
+ $id = ip_details($ipaddress);
+
+ $url="http://api.openweathermap.org/data/2.5/weather?id={$id}&APPID=ebb802f07cc687a9c8a75898002c8a37";
  //get JSON
  $json = file_get_contents($url.'&units=metric&type=accurate&mode=jso‌​n');
  //decode JSON to array
