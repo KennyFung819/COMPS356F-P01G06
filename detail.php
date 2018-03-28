@@ -116,8 +116,8 @@
 				</p></div>
 				<p><?php
 				foreach($tag as $keys => $topic){
-						echo "<span style=\"  	background-size: cover;
-						  	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk606roJP6CL6xumG2XHPuldOvcVZmWv2gMwJJDkvsbOoRMIhJMg);\"><a href=\"\">#" . $topic[0]."</a> </span>";//
+						echo "<span style=\"  	background-size: 100% 100%; margin : 5px;
+						  	background-image: url(images/tag.jpg);\"><a href=\"\">#" . $topic[0]."</a> </span>";//
 				}?></p>
 
 			<p><img src = "<?= $result[0]['Image'] ?>", alt="" class="image image-full" /> </p>
