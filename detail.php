@@ -120,7 +120,7 @@
 						  	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk606roJP6CL6xumG2XHPuldOvcVZmWv2gMwJJDkvsbOoRMIhJMg);\"><a href=\"\">#" . $topic[0]."</a> </span>";//
 				}?></p>
 
-			<p><img src="data:image/png;base64,<?=base64_encode( $result[0]['Image'] )?>" alt="" class="image image-full" /> </p>
+			<p><img src = "<?= $result[0]['Image'] ?>", alt="" class="image image-full" /> </p>
 			<p><?=$result[0]['Content']?></p>
 			<p style="color:black;border-bottom:1px solid rgba(34,36,38,.15);">Comment</p>
 			<article class="am-comment">

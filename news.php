@@ -3,6 +3,7 @@
 	$sth = $conn->prepare("SELECT Id,Title,Introduction,Image,type FROM Post ORDER BY likeNo desc");
     $sth->execute();
     $result = $sth->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -93,7 +94,7 @@
 				<div class="row">
 					<div class="fh5co-grid">
 						<div class="fh5co-v-half to-animate-2">
-							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(data:image/jpeg;base64,<?=base64_encode( $result[0]['Image'] )?>)"></div>
+							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(<?=$result[0]['Image']?>)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
 								<h2><?=$result[0]['Title'] ?></h2>
 								<p><?=$result[0]['Introduction'] ?></p>
@@ -102,7 +103,7 @@
 						</div>
 						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(data:image/jpeg;base64,<?=base64_encode( $result[1]['Image'] )?>)"></div>
+								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(<?=$result[1]['Image']?>)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
 									<h2><?=$result[1]['Title'] ?></h2>
 									<p><?=$result[1]['Introduction'] ?></p>
@@ -110,7 +111,7 @@
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(data:image/jpeg;base64,<?=base64_encode( $result[2]['Image'] )?>)"></div>
+								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(<?=$result[2]['Image']?>)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
 									<h2><?=$result[2]['Title'] ?></h2>
 									<p><?=$result[2]['Introduction'] ?></p>
@@ -121,7 +122,7 @@
 
 						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(data:image/jpeg;base64,<?=base64_encode( $result[3]['Image'] )?>)"></div>
+								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(<?=$result[3]['Image']?>)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
 									<h2><?=$result[3]['Title'] ?></h2>
 									<p><?=$result[3]['Introduction'] ?></p>
@@ -129,7 +130,7 @@
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(data:image/jpeg;base64,<?=base64_encode( $result[4]['Image'] )?>)"></div>
+								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(<?=$result[4]['Image']?>)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
 									<h2>Salad with Crispy Chicken</h2>
 									<h2><?=$result[4]['Title'] ?></h2>
@@ -139,7 +140,7 @@
 							</div>
 						</div>
 						<div class="fh5co-v-half to-animate-2">
-							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(data:image/jpeg;base64,<?=base64_encode( $result[5]['Image'] )?>)"></div>
+							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(<?=$result[5]['Image']?>)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
 								<h2><?=$result[5]['Title'] ?></h2>
 								<p><?=$result[5]['Introduction'] ?></p>
