@@ -79,10 +79,12 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	
+	<!--For Google+ and Twitter share link-->
+	<!--<link rel="canonical" href="http://www.cellfish.com/" />-->
+	
 	</head>
 	<body>
-
 	<div id="fh5co-container">
 		<div class="js-sticky">
 			<div class="fh5co-main-nav">
@@ -109,10 +111,36 @@
 			<div class="title">
 				<h2><?=$result[0]['Title']?></h2>
 
+
 				<span class="byline"><?=$myDateTime->format('Y-m-d H:i');?></span> 
 				<i class="am-icon-thumbs-up" id="postLike" onclick="like(<?=$_GET['id']?>,'Post')">  
 				<?=$result["0"]["likeNo"]?></i>
+				
 						<i class="fa fa-eye" id="viewCount"> <?=$result[0]['viewCount']?></i>
+										<div class="product-social-links" style="line-height: 12.5px;">
+					<!--Facebook share button-->
+					<div class="fb-share-button" data-href="http://www.cellfish.com/test" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cellfish.com%2Ftest&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" >Share</a></div>
+
+					<!--Twitter share button-->
+					<a class="twitter-share-button"
+					href="https://twitter.com/intent/tweet?text=<?=$result[0]['Title']?>"
+					data-size="large">
+					Tweet</a>
+				
+					<!--<div class="g-plus" data-action="share" data-height="29" ></div>-->
+					<div class="g-plus" data-action="share" data-height="29" data-href="http://www.cellfish.com/" ></div>			
+					<!--<g:plus action="share"></g:plus>-->
+
+					<script>
+					window.___gcfg = {
+						lang: 'en-US',
+						parsetags: 'onload'
+					};
+					</script>
+					<script src="https://apis.google.com/js/platform.js" async defer></script>
+				
+					</div>
+						
 				</p></div>
 				<p><?php
 				foreach($tag as $keys => $topic){
@@ -216,26 +244,35 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v2.11&appId=116344648445954';
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=116344648445954';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
 	<div id="fh5co-footer">
 		<div class="container">
-			<div class="row row-padded">
-				<div class="col-md-12 text-center">
-					<p class="to-animate">&copy; 2017 Software engineering . <br> Designed by OU student
-					</p>
-					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
-				</div>
-			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
+
 					<ul class="fh5co-social">
-						<li class="to-animate-2" data-href="https://se1-edmondwoo.c9users.io/aaaaa/detail.php?id=<?=$id?>"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fse1-edmondwoo.c9users.io%2Faaaaa%2Fdetail.php%3Fid%3D<?=$id?>&amp;src=sdkpreparse"><i class="icon-facebook"></i></a></li>
+						<li class="to-animate-2" data-href="http://www.cellfish.com/test"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cellfish.com%2Ftest&amp;src=sdkpreparse"><i class="icon-facebook"></i></a></li>
 						<li class="to-animate-2"><a href="#"><i class="icon-twitter"></i></a></li>
 						<li class="to-animate-2"><a href="#"><i class="icon-instagram"></i></a></li>
 					</ul>
+				</div>	
+				<div class="col-md-12 text-center">
+					<ul >
+						<li ><a href="terms.php">Terms and Conditions</a></li>
+						<li ><a href="condition.php">Privacy Policy</a></li>
+					</ul>	
+				</div>
+			</div>
+			
+			<div class="row row-padded">
+				<div class="col-md-12 text-center">
+					
+					<!--<p class="to-animate">&copy; 2017 Software engineering . <br> Designed by OU student</p>-->
+					<p class="to-animate">&copy; OUHK Computing in Internet Technology <br> Further Amended by COMPS356F-P01G06 2018</p>
+					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
 				</div>
 			</div>
 		</div>
@@ -323,4 +360,25 @@ function saveReplay(id,reply){
 	}
 	http.send(params);
 }
+
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
+
+
 </script>
+
