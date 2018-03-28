@@ -101,7 +101,7 @@
 								<a href="detail.php?id=<?=$result[0]['Id']?>"><input type="submit" class="am-btn am-btn-secondary" value="More Details"></a>
 							</div>
 						</div>
-						0<div class="fh5co-v-half">
+						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(<?=$result[1]['Image']?>)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">

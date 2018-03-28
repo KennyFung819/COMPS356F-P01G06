@@ -12,7 +12,7 @@
  //show data
  echo "Region : " . $data["name"] . "</BR>";
  echo "<img src=images/icon_temperature.png alt=\"Temperature icon\"/>";
- echo "Temperature : " . $data["main"]["temp"] . "°C</BR>";
+ echo "Temperature : " . $data["main"]["temp"] . "&#176;C</BR>";
  echo "<img src=images/icon_water.png alt=\"Water droplet icon\"/>";
  echo "Humidity : " . $data["main"]["humidity"] . "%</BR>";
  echo "Weather description : ". $data["weather"][0]["description"] ."</BR>";
