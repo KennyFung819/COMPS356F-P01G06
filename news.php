@@ -176,7 +176,7 @@
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="data:image/png;base64,<?=base64_encode($posts[$i]["Image"])?>" class="img-responsive" width="524" height="350">
+											<img src="<?=$posts[$i]['Image']?>" class="img-responsive" width="524" height="350">
 										</figure>
 										<div>
 											<h3><a href="detail.php?id=<?=$posts[$i]["Id"]?>"><?=$posts[$i]["Title"]?></a></h3>
@@ -204,7 +204,7 @@
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="data:image/png;base64,<?=base64_encode($posts[$i]["Image"])?>" class="img-responsive" width="524" height="350">
+											<img src="<?=$posts[$i]['Image']?>" class="img-responsive" width="524" height="350">
 										</figure>
 										<div>
 											<h3><a href="detail.php?id=<?=$posts[$i]["Id"]?>"><?=$posts[$i]["Title"]?></a></h3>
@@ -232,7 +232,7 @@
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="data:image/png;base64,<?=base64_encode($posts[$i]["Image"])?>" class="img-responsive" width="524" height="350">
+											<img src="<?=$posts[$i]['Image']?>" class="img-responsive" width="524" height="350">
 										</figure>
 										<div>
 											<h3><a href="detail.php?id=<?=$posts[$i]["Id"]?>"><?=$posts[$i]["Title"]?></a></h3>
@@ -260,7 +260,7 @@
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="data:image/png;base64,<?=base64_encode($posts[$i]["Image"])?>" class="img-responsive" width="524" height="350">
+											<img src="<?=$posts[$i]['Image']?>" class="img-responsive" width="524" height="350">
 										</figure>
 										<div>
 											<h3><a href="detail.php?id=<?=$posts[$i]["Id"]?>"><?=$posts[$i]["Title"]?></a></h3>
