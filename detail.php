@@ -197,19 +197,19 @@
 				<a href="detail.php?id=<?=$posts[0]["Id"]?>">
 				<li class="first">
 					<h3><?=$posts[0]["Title"]?></h3>
-					<p><a href="#"><?=$posts[0]["Introduction"]?></a></p>
+					<p><?=$posts[0]["Introduction"]?></p>
 				</li>
 				</a>
 				<a href="detail.php?id=<?=$posts[1]["Id"]?>">
 				<li class="first">
 					<h3><?=$posts[1]["Title"]?></h3>
-					<p><a href="#"><?=$posts[1]["Introduction"]?></a></p>
+					<p><?=$posts[1]["Introduction"]?></p>
 				</li>
 				</a>
 				<a href="detail.php?id=<?=$posts[2]["Id"]?>">
 				<li class="first">
 					<h3><?=$posts[2]["Title"]?></h3>
-					<p><a href="#"><?=$posts[2]["Introduction"]?></a></p>
+					<p><?=$posts[2]["Introduction"]?></p>
 				</li>
 				</a>
 			</ul>
