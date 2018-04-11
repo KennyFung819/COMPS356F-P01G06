@@ -1,12 +1,6 @@
 <?php
 	require_once('../database.php');
-		session_start();
-	if (isset($_GET['logout'])) {
-     unset($_SESSION['admin']);
-    }
-	if(!$_SESSION['admin']){
-		header('Location: login.html');
-	}
+    require_once ('login.php');
 	$sth = $conn->prepare("SELECT Id FROM Staff");
 	$sth->execute();
     $result = $sth->fetchAll();

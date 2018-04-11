@@ -1,8 +1,5 @@
 <?php
-	session_start();
-	if(!$_SESSION['admin']){
-		header('Location: login.html');
-	}
+    require_once ('login.php');
 
 
 ?>

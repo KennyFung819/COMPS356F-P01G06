@@ -1,5 +1,6 @@
 <?php
 	require_once('../database.php');
+
 	$aaa = "Insert into Post (Id,Title,Content,Introduction,type,likeNo,DateTime,Image) Values(" ;
 $_POST['likeNo']=0;
 $_POST['DateTime']=date("Y-m-d G:i:s");
