@@ -1,6 +1,12 @@
 <?php
+<<<<<<< HEAD
 require_once('../database.php');
 
+=======
+	require_once('../database.php');
+
+	$aaa = "Insert into Post (Id,Title,Content,Introduction,type,likeNo,DateTime,Image) Values(" ;
+>>>>>>> Search(Integrate)
 $_POST['likeNo']=0;
 $_POST['DateTime']=date("Y-m-d G:i:s");
 

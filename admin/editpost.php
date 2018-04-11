@@ -1,9 +1,6 @@
 ﻿<?php
 	require_once('../database.php');
-	session_start();
-	if(!$_SESSION['admin']){
-		header('Location: login.html');
-	}
+	require_once ('login.php');
 	$sth = $conn->prepare("SELECT * FROM Post where Id =".$_GET["Id"]);
 	$sth->execute();
     $result = $sth->fetchAll();
@@ -116,7 +113,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Post</a>
+          <a href="index.php">Post</a>
         </li>
         <li class="breadcrumb-item active">List All Post</li>
         <li class="breadcrumb-item active">Edit Post</li>

@@ -24,7 +24,7 @@ if (!isset($_SESSION['keywordsInput'])||!isset($_SESSION['keywordsType'])) {
 
 $_SESSION['keywordsInput']=$_GET['keywordsInput'];
 $_SESSION['keywordsType']=$_GET['keywordsType'];
-$keywordsArray=processString($_SESSION['keywordsInput']);
+$keywordsArray=processString($_SESSION['keywordsI   nput']);
 $_SESSION['resultBuffer']=makeConnection($keywordsArray, $_SESSION['keywordsType']);
 if($_SESSION['resultBuffer']!=null){
     $_SESSION['resultSet']=processHtml($_SESSION['resultBuffer'], $_SESSION['page']);

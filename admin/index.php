@@ -136,7 +136,14 @@ $NUM_LAYERS: 20;
 }
 	</style>
 	<body>
-
+    <?
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    if($_SESSION['admin']==true){
+        header('Location: addpost.php');
+    }
+    ?>
 
 		<div id="fh5co-home" class="js-fullheight" data-section="home">
 

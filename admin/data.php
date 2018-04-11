@@ -1,9 +1,6 @@
 <?php
 	require_once('../database.php');
-	session_start();
-	if(!$_SESSION['admin']){
-		header('Location: login.html');
-	}
+    require_once ('login.php');
 	$sth = $conn->prepare("SELECT * FROM Post where Id =".$_GET["Id"]);
 	$sth->execute();
     $result = $sth->fetchAll();

@@ -1,12 +1,6 @@
 <?php
 	require_once('../database.php');
-		session_start();
-	if (isset($_GET['logout'])) {
-     unset($_SESSION['admin']);
-    }
-	if(!$_SESSION['admin']){
-		header('Location: index.php');
-	}
+    require_once ('login.php');
 	$sth = $conn->prepare("SELECT Id,Name, Email,Subject,Message FROM Contact");
 	$sth->execute();
     $result = $sth->fetchAll();

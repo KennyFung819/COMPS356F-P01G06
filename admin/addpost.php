@@ -1,12 +1,6 @@
 <?php
 	require_once('../database.php');
-		session_start();
-	if (isset($_GET['logout'])) {
-     unset($_SESSION['admin']);
-    }
-	if(!$_SESSION['admin']){
-		header('Location: login.html');
-	}
+    require_once ('login.php');
 ?>
 <style>
 .form-style-3{
@@ -111,7 +105,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Post</a>
+          <a href="index.php">Post</a>
         </li>
         <li class="breadcrumb-item active">Add Post</li>
       </ol>
