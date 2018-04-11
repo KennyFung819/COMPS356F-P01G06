@@ -13,17 +13,12 @@
                     <a href="news.php" data-nav-section="menu">News</a>
                     <a href="games.php" data-nav-section="menu">Game</a>
                     <!-- need to do modification in CSS (btn,from,option)-->
-                    <form class="form-inline" action="search.php">
+                    <button onclick="toggleSearch()" class="btn btn-primary" data-nav-section="menu"><span class="icon-magnifier"></span></button>
+                    <form class="form-inline " id="search-bar" action="search.php" style="display: none">
                         <div class="input-group">
+                            <input type="text" class="form-control form-control-search" name="keywordsInput" value="" placeholder="Input Here">
                             <div class="input-group-btn">
-                                <select class="btn btn-primary" name="keywordsType">
-                                    <option class="btn" value="name" selected>Name</option>
-                                    <option class="btn" value="platform">Platform</option>
-                                </select>
-                            </div>
-                            <input type="text" class="form-control" name="keywordsInput" value="" placeholder="Input Here">
-                            <div class="input-group-btn">
-                                <input type="submit" class="btn  btn-success my-2 my-sm-0" value="search">
+                                <input type="submit" class="btn  btn-success" value="search">
                             </div>
                         </div>
                     </form>

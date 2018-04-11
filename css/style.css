@@ -149,6 +149,11 @@ p {
     outline: none;
     box-shadow: none;
     border-color: #fb6e14; }
+  .form-control .form-control-search {
+    height: 42px;
+    font-size: 12px;
+    font-weight: 200;
+    min-width: 30%; }
 
 /*
  * Flexslider
@@ -219,7 +224,7 @@ p {
       display: none; }
 
 .fh5co-main-nav {
-  position: relative;
+  position: absolute;
   background: #fff; }
   .fh5co-main-nav.fh5co-shadow {
     -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
