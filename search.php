@@ -3,7 +3,7 @@
 session_start();
 if (!isset($_GET['keywordsInput'])||!isset($_GET['keywordsType'])) {
     //redirect the page if the inputs from users are invalid
-    header("Location:searchingResult.php");
+    header("Location:searchResult.php");
     die;
 }
 
@@ -24,7 +24,7 @@ if (!isset($_SESSION['keywordsInput'])||!isset($_SESSION['keywordsType'])) {
 
 $_SESSION['keywordsInput']=$_GET['keywordsInput'];
 $_SESSION['keywordsType']=$_GET['keywordsType'];
-$keywordsArray=processString($_SESSION['keywordsI   nput']);
+$keywordsArray=processString($_SESSION['keywordsInput']);
 $_SESSION['resultBuffer']=makeConnection($keywordsArray, $_SESSION['keywordsType']);
 if($_SESSION['resultBuffer']!=null){
     $_SESSION['resultSet']=processHtml($_SESSION['resultBuffer'], $_SESSION['page']);
@@ -36,7 +36,7 @@ else {
     $_SESSION['page']=null;
 }
 //redirection
-header("Location:searchingResult.php?keywordsInput=".$_SESSION['keywordsInput']."&keywordsType=".$_SESSION['keywordsType']."&page=".$_SESSION['page']);
+header("Location:searchResult.php?keywordsInput=".$_SESSION['keywordsInput']."&keywordsType=".$_SESSION['keywordsType']."&page=".$_SESSION['page']);
 
 /**
  *this function is used to split input string into separate words by regular expression
@@ -56,7 +56,7 @@ function processString($keywords)
 if (include_once "database.php"){
 $sql = "Select id from post where";
     foreach ($keywords as $word) {
-        $sql=$sql."lower($keywordsType) like lower('%$word%') and ";
+        $sql=$sql."title like lower('%$word%') and ";
     }
         $sql=$sql." 1=1";
         echo $sql;
@@ -89,7 +89,7 @@ function processHtml(mysqli_stmt $resultSet,$page)
         $page=1;
     }
     $resultSet->data_seek(($page-1)*20);
-    $resultSet->bind_result($kolId,$name,$picturePath,$intro);
+    $resultSet->bind_result($id,$title,$intro,$image,$datetime);
     for ($count=0;$count<20;$count++) {
         //add html tags into fetched record
         if(!$resultSet->fetch())
@@ -97,11 +97,12 @@ function processHtml(mysqli_stmt $resultSet,$page)
         $html=$html."
       <div class='row'>
       <div class='col-lg-3 col-md-6 text-center'>
-      <a href=../content/index.php?targetKol=$kolId>
-        <img src='../$picturePath' alt='$name &apos; picture' height='200'/>
-        <h4>$name</h4></a>
+      <a href=detail.php?id=$id>
+        <img src='../$image' alt='article at $datetime' height='200'/>
+        <h4>$title</h4></a>
       </div>
       <div class='col-lg-9 col-md-6 text-center'><p class='text-muted mb-0'>$intro</p></div>
+       <a href=detail.php?id=$id><div class='btn btn-primary'>Learn more</div></a>
       </div>";
     }
     echo $html;
@@ -120,18 +121,18 @@ function processPages(mysqli_stmt $resultset,$page){
       $pages=(int)($resultset->num_rows/20)+1;
       $pageHtml="<div><hr></div><span class='col-lg-5 col-md-6 text-right text-muted'>select pages here ▶ </span><ul class='pagination col-lg-7 col-md-6'>";
       if ($page!=1) {
-          echo "<li><a href='searchingResult.php?keywordstype=$keywordsType&keywordsInput=$keywordsInput&page=".($page-1)."'>previous page</a></li>";
+          echo "<li><a href='searchResult.php?keywordstype=$keywordsType&keywordsInput=$keywordsInput&page=".($page-1)."'>previous page</a></li>";
       }
       for ($times=0;$times<10&&$count<=$pages;$count++,$times++) {
           if ($count==$page) {
               $pageHtml=$pageHtml."<li><a href='#'>$count</a></li>";
           } else {
-              $pageHtml=$pageHtml."<li><a href='searchingResult.php?keywordstype=$keywordsType&keywordsInput=$keywordsInput&page=$count'>$count</a></li>";
+              $pageHtml=$pageHtml."<li><a href='searchResult.php?keywordstype=$keywordsType&keywordsInput=$keywordsInput&page=$count'>$count</a></li>";
           }
       }
       echo "the number of total pages is".$pages;
       if ($page<$pages) {
-          $pageHtml=$pageHtml."<li><a href='searchingResult.php?keywordstype=$keywordsType&keywordsInput=$keywordsInput&page=".($page+1)."'>next page</a></li>";
+          $pageHtml=$pageHtml."<li><a href='searchResult.php?keywordstype=$keywordsType&keywordsInput=$keywordsInput&page=".($page+1)."'>next page</a></li>";
       }
       $pageHtml=$pageHtml."</ul>";
       return $pageHtml;
