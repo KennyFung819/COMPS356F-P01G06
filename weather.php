@@ -4,15 +4,18 @@
 //$city = json_decode($cityID,true);
 //var_dump($cityID);
 
- $ipaddress = $_SERVER["REMOTE_ADDR"]; //Default Taiwan
+ $ipaddress = $_SERVER["REMOTE_ADDR"]; //Default Hong Kong
 
  function ip_details($ip) {
     $json = file_get_contents("http://ipinfo.io/{$ip}/geo");
     $details = json_decode($json);
-    if(strcmp($details->city,"Hong Kong")===0){
-      $id = "1819730"; // HK
-    }else{
+    if($details->bogon){
+      return "1819730";
+    }
+    if(strcmp($details->city,"Tai Wan")===0){
       $id = "1668284"; //Taiwan
+    }else{
+      $id = "1819730"; // HK
     }
     return $id;
  }
@@ -26,12 +29,10 @@
  //decode JSON to array
  $data = json_decode($json,true);
  //show data
- echo "Region : " . $data["name"] . "</BR>";
- echo "<img src=images/icon_temperature.png alt=\"Temperature icon\"/>";
- echo "Temperature : " . $data["main"]["temp"] . "°C</BR>";
- echo "<img src=images/icon_water.png alt=\"Water droplet icon\"/>";
- echo "Humidity : " . $data["main"]["humidity"] . "%</BR>";
- echo "Weather description : ". $data["weather"][0]["description"] ."</BR>";
+ echo "<span style=\"margin-right:20px;\">" . $data["name"] . "</span>";
+ echo "<span style=\"margin-right:20px;\"><img src=images/icon_temperature.png alt=\"Temperature icon\"/>" . $data["main"]["temp"] . "°C</span>";
+ echo "<span style=\"margin-right:20px;\"><img src=images/icon_water.png alt=\"Water droplet icon\"/>".$data["main"]["humidity"] . "%</span>";
+ echo "<img src=images/icon_cloud.png alt=\"Cloud icon\"/>". $data["weather"][0]["description"];
 
 /* -----------example array---------
 array(12) {
