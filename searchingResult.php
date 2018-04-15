@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once "asset/header.html"?>
+<?php require_once "asset/header.html";
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
 <body class="bg-light">
-<section class="text-white" id="introduction">
+<?php require_once "asset/navbar.html"?>
+
+<div class="text-white" id="introduction">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -16,16 +22,6 @@
     <div class="container">
         <form class="navbar-form navbar-search my-lg-0" action="search.php">
             <div class="input-group">
-                <div class="input-group-btn">
-                    <select class="btn btn-primary" name="keywordsType">
-                        <option class="btn" value="name" <?php if (isset($_SESSION['keywordsType'])&&$_SESSION['keywordsType']=="name") {
-                            echo "selected";
-                        } ?>>Name</option>
-                        <option class="btn" value="platform" <?php if (isset($_SESSION['keywordsType'])&&$_SESSION['keywordsType']=="platform") {
-                            echo "selected";
-                        } ?>>Platform</option>
-                    </select>
-                </div>
                 <input type="text" class="form-control" name="keywordsInput" placeholder="please enter the keywords you want to search" value="<?php
                 if (!empty($_SESSION['keywordsInput'])&&!ctype_space($_SESSION['keywordsInput'])) {
                     echo trim($_SESSION['keywordsInput']);
@@ -37,8 +33,8 @@
             </div>
         </form>
     </div>
-</section>
-<section id="resultdetail">
+</div>
+<div id="resultdetail">
     <div class='container'>
         <div id="result">
             <?php
@@ -48,7 +44,7 @@
             ?>
         </div>
     </div>
-</section>
+</div>
 <section id=page>
     <div class="container">
         <div class="row">
