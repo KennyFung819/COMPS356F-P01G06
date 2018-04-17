@@ -249,7 +249,9 @@ p {
 		box-shadow: none;
 	}
 }
-
+#serachResult{
+	padding-top: 10%;
+}
 // Form Input Field
 .form-control {
 	box-shadow: none;
@@ -360,6 +362,7 @@ p {
 .fh5co-main-nav {
 	position: absolute;
 	background: $brand-white;
+	z-index:255;
 	&.fh5co-shadow {
 		-webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, .3);
 		-moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, .3);
@@ -1379,7 +1382,9 @@ p {
 		opacity: 0;	
 	}
 }
-
+.top-padded{
+	padding-top:20px;
+}
 .row-padded {
 	padding-bottom: 40px;
 }

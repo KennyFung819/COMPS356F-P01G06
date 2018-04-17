@@ -117,13 +117,12 @@ function processHtml(mysqli_stmt $resultSet,$page)
           break;
         $html=$html."
       <div class='row'>
-      <div class='col-lg-3 col-md-6 text-center'>
+      <div class='col-lg-3 col-md-6 text-left'>
       <a href=detail.php?id=$id>
         <img src='$image' alt='article at $datetime' height='200'/>
         <h4>$title</h4></a>
       </div>
-      <div class='col-lg-9 col-md-6 text-center'><p class='text-muted mb-0'>$intro</p></div>
-       <a href=detail.php?id=$id><div class='btn btn-primary'>Learn more</div></a>
+      <div class='col-lg-6 col-lg-offset-3 col-md-6 text-center'><p class='text-muted mb-0'>$intro</p></div>
       </div>";
     }
     echo $html;

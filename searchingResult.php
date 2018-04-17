@@ -8,19 +8,14 @@ if (!isset($_SESSION)) {
 <body class="bg-light">
 <?php require_once "asset/navbar.html"?>
 
-<div class="text-white" id="introduction">
+<div class="container">
+    <p>Following is the search record</p>
+    <p> </p>
+</div>
+
+<div class="text-white top-padded" id="serachResult">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-emphasize">Search the Article</h2>
-                <hr class="my-5">
-                <div class="col-lg-8 mx-auto">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <form class="navbar-form navbar-search my-lg-0" action="search.php">
+        <form class="my-lg-8 text-center" action="search.php">
             <div class="input-group">
                 <input type="text" class="form-control" name="keywordsInput" placeholder="please enter the keywords you want to search" value="<?php
                 if (!empty($_SESSION['keywordsInput'])&&!ctype_space($_SESSION['keywordsInput'])) {
@@ -46,7 +41,7 @@ if (!isset($_SESSION)) {
     </div>
 </div>
 <section id=page>
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
             <?php
             if(isset($_SESSION['pages'])) {

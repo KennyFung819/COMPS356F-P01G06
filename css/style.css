@@ -138,6 +138,9 @@ p {
   .btn-outline:hover, .btn-outline:focus, .btn-outline:active {
     box-shadow: none; }
 
+#serachResult {
+  padding-top: 10%; }
+
 .form-control {
   box-shadow: none;
   background: transparent;
@@ -225,7 +228,8 @@ p {
 
 .fh5co-main-nav {
   position: absolute;
-  background: #fff; }
+  background: #fff;
+  z-index: 255; }
   .fh5co-main-nav.fh5co-shadow {
     -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
@@ -1094,6 +1098,9 @@ p {
 .js .to-animate,
 .js .to-animate-2 {
   opacity: 0; }
+
+.top-padded {
+  padding-top: 20px; }
 
 .row-padded {
   padding-bottom: 40px; }
