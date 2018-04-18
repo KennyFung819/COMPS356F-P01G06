@@ -76,7 +76,9 @@
 			</div>
 		</div>
 
-				<div style="padding: 65px 0px 0px;text-align: center;
+				<div style="padding-top: 5%;
+							padding-bottom: 1%;
+							text-align: center;
 				background-color: white;;
 				color: black;">
 				<?php require 'weather.php'?>
