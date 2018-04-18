@@ -27,7 +27,7 @@ if ($keywordsArray!=null) {
 if ($_SESSION['resultBuffer']!=null) {
     $_SESSION['resultSet']=processHtml($_SESSION['resultBuffer'], $_SESSION['page']);
     $_SESSION['pages']=processPages($_SESSION['resultBuffer'], $_SESSION['page']);
-    $_SESSION['resultBuffer']->free_result();
+    unset($_SESSION['resultBuffer']);
 } else {
     $_SESSION['resultSet']="<p>the article you want to search doesn't exist, please try other keywords</p>";
     $_SESSION['pages']=null;
@@ -67,14 +67,16 @@ function makeConnection(array $keywords)
     //
     else {
         echo "connect successfully<br>";
-        $sql = "Select id,title,introduction,image,dateTime from post where title like";
+        $sql = "Select id,title,introduction,image,dateTime from post where ";
         $i =  0;
         $keywordsTotal = count($keywords);
         foreach ($keywords as $word) {
             if(++$i === $keywordsTotal) {
-                $sql=$sql." lower('%$word%') ";
+                $sql=$sql."title like lower('%$word%') ";
+                print_r($word."<br>");
             } else {
-                $sql=$sql." lower('%$word%') or ";
+                $sql=$sql."title like lower('%$word%') or ";
+                print_r($word."<br>");
             }
         }
         $sql=$sql." and 1=1";
