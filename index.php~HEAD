@@ -8,7 +8,14 @@
 	<div id="fh5co-container">
 
     <?php require_once "asset/navbar.html"?>
-
+	
+	<div style="padding-top: 5%;
+				padding-bottom: 1%;
+				text-align: center;
+				background-color: white;;
+				color: black;">
+				<?php require 'weather.php'?>
+	</div>
     <div id="fh5co-home" class="js-fullheight" data-section="home">
 
         <div class="flexslider">

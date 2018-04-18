@@ -1,21 +1,40 @@
 <?php
-//get City
+//get City 1668284=taiwan  , 1819730 = HK for example
 //$cityID = file_get_contents("city.list.json");
 //$city = json_decode($cityID,true);
 //var_dump($cityID);
 
- $url="http://api.openweathermap.org/data/2.5/weather?id=1819730&APPID=ebb802f07cc687a9c8a75898002c8a37";
+ $ipaddress = $_SERVER["REMOTE_ADDR"]; //Default Hong Kong
+
+ function ip_details($ip) {
+    $json = file_get_contents("http://ipinfo.io/{$ip}/geo");
+    $details = json_decode($json);
+    if($details->bogon){
+      return "1819730";
+    }
+    if(strcmp($details->city,"Tai Wan")===0){
+      $id = "1668284"; //Taiwan
+    }else{
+      $id = "1819730"; // HK
+    }
+    return $id;
+ }
+
+ //get city id
+ $id = ip_details($ipaddress);
+
+ $url="http://api.openweathermap.org/data/2.5/weather?id={$id}&APPID=ebb802f07cc687a9c8a75898002c8a37";
  //get JSON
  $json = file_get_contents($url.'&units=metric&type=accurate&mode=jso‌​n');
  //decode JSON to array
  $data = json_decode($json,true);
  //show data
- echo "Region : " . $data["name"] . "</BR>";
- echo "<img src=images/icon_temperature.png alt=\"Temperature icon\"/>";
- echo "Temperature : " . $data["main"]["temp"] . "&#176;C</BR>";
- echo "<img src=images/icon_water.png alt=\"Water droplet icon\"/>";
- echo "Humidity : " . $data["main"]["humidity"] . "%</BR>";
- echo "Weather description : ". $data["weather"][0]["description"] ."</BR>";
+
+ echo "<span style=\"margin-right:20px;\">" . $data["name"] . "</span>";
+ echo "<span style=\"margin-right:20px;\"><img src=images/icon_temperature.png alt=\"Temperature icon\"/>" . $data["main"]["temp"] . "°C</span>";
+ echo "<span style=\"margin-right:20px;\"><img src=images/icon_water.png alt=\"Water droplet icon\"/>".$data["main"]["humidity"] . "%</span>";
+ echo "<img src=images/icon_cloud.png alt=\"Cloud icon\"/>". $data["weather"][0]["description"];
+
 
 /* -----------example array---------
 array(12) {
