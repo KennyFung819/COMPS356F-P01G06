@@ -5,6 +5,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 ?>
+<style>
+#serachResult{
+	padding-top:10%;
+	padding-bottom:10%;
+}
+</style>
 <body class="bg-light">
 <?php require_once "asset/navbar.html"?>
 

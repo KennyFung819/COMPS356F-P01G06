@@ -29,7 +29,7 @@ if ($_SESSION['resultBuffer']!=null) {
     $_SESSION['pages']=processPages($_SESSION['resultBuffer'], $_SESSION['page']);
     $_SESSION['resultBuffer']->free_result();
 } else {
-    $_SESSION['resultSet']="<p>the kol you want to search doesn't exist, please try other keywords</p>";
+    $_SESSION['resultSet']="<p>the article you want to search doesn't exist, please try other keywords</p>";
     $_SESSION['pages']=null;
 }
 //redirection
