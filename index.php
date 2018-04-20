@@ -76,13 +76,14 @@
 			</div>
 		</div>
 
-				<div style="padding-top: 5%;
-							padding-bottom: 1%;
+				<div style="padding-top: 75px;
+
 							text-align: center;
 				background-color: white;;
 				color: black;">
-				<?php require 'weather.php'?>
+				<?php require 'weather.php'?>			<?php require 'HSI.php'?><?php require 'fortuneCookie.php'?>
 			</div>
+
 
 		<div id="fh5co-home" class="js-fullheight" data-section="home">
 
