@@ -33,7 +33,7 @@
  echo "<span style=\"margin-right:20px;\">" . $data["name"] . "</span>";
  echo "<span style=\"margin-right:20px;\"><img src=images/icon_temperature.png alt=\"Temperature icon\"/>" . $data["main"]["temp"] . "°C</span>";
  echo "<span style=\"margin-right:20px;\"><img src=images/icon_water.png alt=\"Water droplet icon\"/>".$data["main"]["humidity"] . "%</span>";
- echo "<img src=images/icon_cloud.png alt=\"Cloud icon\"/>". $data["weather"][0]["description"];
+ echo "<span style=\"margin-right:20px;\"><img src=images/icon_cloud.png alt=\"Cloud icon\"/>". $data["weather"][0]["description"] . "</span>";
 
 
 /* -----------example array---------

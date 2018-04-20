@@ -9,13 +9,15 @@
 
     <?php require_once "asset/navbar.html"?>
 	
-	<div style="padding-top: 5%;
-				padding-bottom: 1%;
+			<div style="padding-top: 75px;
 				text-align: center;
 				background-color: white;;
 				color: black;">
 				<?php require 'weather.php'?>
-	</div>
+				<?php require 'HSI.php'?>
+				<?php require 'fortuneCookie.php'?>
+			</div>
+			
     <div id="fh5co-home" class="js-fullheight" data-section="home">
 
         <div class="flexslider">
@@ -41,6 +43,7 @@
     </div>
 
     <div id="fh5co-sayings">
+
 			<div class="container">
 				<div class="row to-animate">
 
