@@ -5,17 +5,28 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<?php require_once "asset/header.html"?>
 	<body>
-	<div id="fh5co-container">
-
     <?php require_once "asset/navbar.html"?>
 	
 			<div style="padding-top: 75px;
 				text-align: center;
-				background-color: white;;
+				vertical-align: middle;
+				background-color: white;
+				font-size:16px;
 				color: black;">
-				<?php require 'weather.php'?>
-				<?php require 'HSI.php'?>
-				<?php require 'fortuneCookie.php'?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <?php require 'weather.php'?>
+                        </div>
+                        <div class="col-lg-5">
+                            <?php require 'HSI.php'?>
+                        </div>
+                        <div class="col-lg-2">
+                            <?php require 'fortuneCookie.php'?>
+                            <p>Get some Cookies</p>
+                        </div>
+                    </div>
+                </div>
 			</div>
 			
     <div id="fh5co-home" class="js-fullheight" data-section="home">

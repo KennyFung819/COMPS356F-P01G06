@@ -34,15 +34,15 @@
 			slideshowSpeed: 5000
 	  	});
 
-	  	$('#fh5co-home .flexslider .slides > li').css('height', $(window).height());	
+	  	$('#fh5co-home .flexslider .slides > li').css('height', $(window).height());
 	  	$(window).resize(function(){
-	  		$('#fh5co-home .flexslider .slides > li').css('height', $(window).height());	
+	  		$('#fh5co-home .flexslider .slides > li').css('height', $(window).height());
 	  	});
 
 	};
 
 	var sliderSayings = function() {
-		$('#fh5co-sayings .flexslider').flexslider({
+		$('#fh5co-sayings .flexslisecder').flexslider({
 			animation: "slide",
 			slideshowSpeed: 5000,
 			directionNav: false,

@@ -11,5 +11,5 @@ function showMessage() {
 </script>
 ";
 
-  echo "<input type=\"image\" onclick=\"showMessage()\" src=\"images/icon_cookie.png\"/>";
+  echo "<input type=\"image\" onclick=\"showMessage()\" src=\"images/icon_cookie.png\" style=\"width:30px; height:30px\"/>";
  ?>
