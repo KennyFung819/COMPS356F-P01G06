@@ -42,10 +42,10 @@
 				<h2><?=$result[0]['Title']?></h2>
 
 
-				<span class="byline"><?=$myDateTime->format('Y-m-d H:i');?></span> 
-				<i class="am-icon-thumbs-up" id="postLike" onclick="like(<?=$_GET['id']?>,'Post')">  
+				<span class="byline"><?=$myDateTime->format('Y-m-d H:i');?></span>
+				<i class="am-icon-thumbs-up" id="postLike" onclick="like(<?=$_GET['id']?>,'Post')">
 				<?=$result["0"]["likeNo"]?></i>
-				
+
 						<i class="fa fa-eye" id="viewCount"> <?=$result[0]['viewCount']?></i>
 										<div class="product-social-links" style="line-height: 12.5px;">
 					<!--Facebook share button-->
@@ -56,9 +56,9 @@
 					href="https://twitter.com/intent/tweet?text=<?=$result[0]['Title']?>"
 					data-size="large">
 					Tweet</a>
-				
+
 					<!--<div class="g-plus" data-action="share" data-height="29" ></div>-->
-					<div class="g-plus" data-action="share" data-height="29" data-href="http://www.cellfish.com/" ></div>			
+					<div class="g-plus" data-action="share" data-height="29" data-href="http://www.cellfish.com/" ></div>
 					<!--<g:plus action="share"></g:plus>-->
 
 					<script>
@@ -68,14 +68,14 @@
 					};
 					</script>
 					<script src="https://apis.google.com/js/platform.js" async defer></script>
-				
+
 					</div>
-						
+
 				</p></div>
 				<p><?php
 				foreach($tag as $keys => $topic){
 						echo "<span style=\"  	background-size: 100% 100%; margin : 5px;
-						  	background-image: url(images/tag.jpg);\"><a href=\"\">#" . $topic[0]."</a> </span>";//
+						  	background-image: url(images/tag.jpg);\"> ". $topic[0]." </span>";//
 				}?></p>
 
 			<p><img src = "<?= $result[0]['Image'] ?>", alt="" class="image image-full" /> </p>
@@ -255,4 +255,3 @@ window.twttr = (function(d, s, id) {
 
 
 </script>
-
