@@ -67,7 +67,7 @@ function makeConnection(array $keywords)
     //
     else {
         echo "connect successfully<br>";
-        $sql = "Select id,title,introduction,image,dateTime from post where ";
+        $sql = "Select id,title,introduction,image,dateTime from post LEFT JOIN tag ON tag.postID = Id where ";
         $i =  0;
         $keywordsTotal = count($keywords);
         foreach ($keywords as $word) {
@@ -79,6 +79,7 @@ function makeConnection(array $keywords)
                 print_r($word."<br>");
             }
         }
+        $sql=$sql."OR tag.tagType like lower('%$word%')";
         $sql=$sql." and 1=1";
         echo $sql;
         $stmt=$conn->prepare($sql);
