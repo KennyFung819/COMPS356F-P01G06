@@ -94,6 +94,10 @@
 			</div>
 		</div>
 
+        <div>
+            <?php require_once "tweets.html" ?>
+        </div>
+
 <div id="fb-root"></div>
 
 
