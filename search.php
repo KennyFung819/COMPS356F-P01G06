@@ -72,14 +72,11 @@ function makeConnection(array $keywords)
         $keywordsTotal = count($keywords);
         foreach ($keywords as $word) {
             if(++$i === $keywordsTotal) {
-                $sql=$sql."title like lower('%$word%') ";
-                print_r($word."<br>");
+                $sql=$sql."title like lower('%$word%') OR tag.tagType like lower('%$word%')";
             } else {
-                $sql=$sql."title like lower('%$word%') or ";
-                print_r($word."<br>");
+                $sql=$sql."title like lower('%$word%') OR tag.tagType like lower('%$word%') OR ";
             }
         }
-        $sql=$sql."OR tag.tagType like lower('%$word%')";
         $sql=$sql." and 1=1";
         echo $sql;
         $stmt=$conn->prepare($sql);
