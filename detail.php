@@ -75,7 +75,7 @@
 				<p><?php
 				foreach($tag as $keys => $topic){
 						echo "<span style=\"  	background-size: 100% 100%; margin : 5px;
-						  	background-image: url(images/tag.jpg);\"> ". $topic[0]." </span>";//
+						  	background-image: url(images/tag.jpg);\"><a href=\"search.php?keywordsInput=". $topic[0]."\">". $topic[0] . "</a> </span>";//
 				}?></p>
 
 			<p><img src = "<?= $result[0]['Image'] ?>", alt="" class="image image-full" /> </p>

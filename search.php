@@ -67,7 +67,7 @@ function makeConnection(array $keywords)
     //
     else {
         echo "connect successfully<br>";
-        $sql = "Select id,title,introduction,image,dateTime from post LEFT JOIN tag ON tag.postID = Id where ";
+        $sql = "Select distinct id,title,introduction,image,dateTime from post LEFT JOIN tag ON tag.postID = Id where ";
         $i =  0;
         $keywordsTotal = count($keywords);
         foreach ($keywords as $word) {
@@ -158,10 +158,3 @@ function processPages(mysqli_stmt $resultset,$page){
 }
 
 ?>
-
-
-
-
-
-
-
