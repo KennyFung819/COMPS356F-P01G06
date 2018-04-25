@@ -4,6 +4,15 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<?
+if (!isset($_SESSION)) {
+    session_start();
+}
+if(isset($_SESSION['admin'])){
+    header('Location: addpost.php');
+    die;
+}
+?>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -136,14 +145,6 @@ $NUM_LAYERS: 20;
 }
 	</style>
 	<body>
-    <?
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-    if($_SESSION['admin']==true){
-        header('Location: addpost.php');
-    }
-    ?>
 
 		<div id="fh5co-home" class="js-fullheight" data-section="home">
 
@@ -233,12 +234,3 @@ $NUM_LAYERS: 20;
 
 	</body>
 </html>
-
-					<table>
-					<?php foreach($result as $aa){
-						echo $result; 
-					}
-						
-					
-					?>
-					</table>

@@ -29,7 +29,7 @@
 
 
     <?php require_once "asset/footer.html"?>
-    <script>    
+    <script>
         window.onkeydown = function(e) {
             return !(e.keyCode == 32);
         };

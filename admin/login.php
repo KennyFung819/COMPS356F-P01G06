@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 if (isset($_GET['logout'])) {
     unset($_SESSION['admin']);
 }
-if(!$_SESSION['admin']){
+if(!isset($_SESSION['admin'])){
     header('Location: index.php');
 }
 
