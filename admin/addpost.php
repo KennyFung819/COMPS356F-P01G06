@@ -121,12 +121,10 @@
 						<label for="type"><span>type <span class="required">*</span></span><textarea name="type" class="textarea-field"></textarea></label>
 						<label for="Tag"><span>Tag <span class="required">*</span></span><textarea name="Tag" class="textarea-field"></textarea></label>
 						Enter Multiple Tags by seperating them with blankspace.
-
+						<label for="Image"><span>Image Path <span class="required">*</span></span><textarea name="Image" class="textarea-field"></textarea></label>
+						Enter the image path (eg : postImages/example.jpg)
                    		   </fieldset>
 
-
-			                     <label for="Image"><span>Image <span class="required">*</span></span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8//5bPQAJPgNlqF1CuQAAAABJRU5ErkJggg==" class="img-responsive" width="320" height="240"><br>
-										<br>    </figure><input type="file" onchange="change()" name="Image" /> </label>
 										    </fieldset><input type="submit" class="am-btn am-btn-secondary" value="Insert"/> <input type="Reset" class="am-btn am-btn-secondary" value="Reset"/>
 			                      </div>
 

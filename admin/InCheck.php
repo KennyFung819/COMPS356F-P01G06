@@ -1,7 +1,8 @@
 <?php
 	require_once('../database.php');
-	$aaa = "Insert into Post (Id,Title,Content,Introduction,type,likeNo,DateTime,Image) Values(" ;
+	$aaa = "Insert into Post (Id,Title,Content,Introduction,type,Image,likeNo,viewCount,DateTime) Values(" ;
 $_POST['likeNo']=0;
+$_POST['viewCount']=0;
 $_POST['DateTime']=date("Y-m-d G:i:s");
 
 	foreach($_POST as $key => $value){
@@ -9,15 +10,11 @@ $_POST['DateTime']=date("Y-m-d G:i:s");
 	    $aaa .= "'".$value."',";
 		}
 	}
-
-	if($_FILES['Image']['tmp_name']){
-	$aaa .= "'" .addslashes(file_get_contents($_FILES['Image']['tmp_name']))."');";
-	}else{
-		$aaa .="'');";
-	}
+		$aaa =substr($aaa,0,strlen($aaa)-1).");";
 	$sth = $conn->prepare($aaa);
 	echo $aaa;
     print_r($sth->execute());
+
 
 		//Inserting tags to database
 $tag=explode(' ',$_POST['Tag']);
